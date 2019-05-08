@@ -1,0 +1,8 @@
+.c--form {
+  display: grid;
+
+  &.c--form--2col {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $_8px;
+  }
+}

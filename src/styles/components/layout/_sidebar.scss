@@ -1,0 +1,9 @@
+$c--sidebar--background: $ui-02 !default !global;
+
+.c--sidebar {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $c--sidebar--background;
+  padding: $base-spacing;
+}

@@ -1,0 +1,12 @@
+.app-main {
+  @include debug;
+  height: 100%;
+
+  display: grid;
+
+  font-size: $app-root--font-size;
+
+  grid-template-columns:
+    $layout--main-width
+    $layout--sidebar-width;
+}

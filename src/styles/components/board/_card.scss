@@ -1,0 +1,34 @@
+$c--card--background: $ui-02 !default !global;
+$c--card--header-height: $_32px;
+$c--card--footer-height: $_32px;
+$c--card--body-height: auto;
+
+.c--card {
+  @include debug;
+
+  position: absolute;
+  background: $c--card--background;
+
+  display: grid;
+  grid-template-rows:
+    $c--card--header-height
+    $c--card--body-height
+    $c--card--footer-height;
+
+  &.c--card--selected {
+    border-width: 2px;
+    z-index: 9999;
+  }
+}
+
+.c--card__header {
+  @include debug($c: #f00);
+}
+
+.c--card__footer {
+  @include debug($c: #00f);
+}
+
+.c--card__body {
+  @include debug($c: #f07);
+}

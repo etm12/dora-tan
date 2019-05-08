@@ -1,0 +1,52 @@
+$theme: $carbon--theme--white;
+
+// Pixel amounts
+
+$_8px: remify(8px) !default;
+$_16px: remify(16px) !default;
+$_24px: remify(24px) !default;
+$_32px: remify(32px) !default;
+$_40px: remify(40px) !default;
+$_48px: remify(48px) !default;
+
+// Text and typography ................................................
+
+$font-family-serif: 'IBM Plex Sans', sans-serif !default;
+$font-family-monospace: 'IBM Plex Mono', monospace !default;
+$font-family-base: $font-family-serif !default;
+
+// Base units _______________
+
+$f--12px: remify(12px) !default;
+$f--14px: remify(14px) !default;
+$f--16px: remify(16px) !default;
+$f--18px: remify(18px) !default;
+
+// Specific amounts _________
+
+$app-root--font-size: $f--14px !default;
+
+// Whitespace
+
+$base-spacing: .5rem !default;
+
+// Color ..............................................................
+
+// UI
+$ui-01: map-get($theme, ui-01) !default;
+$ui-02: map-get($theme, ui-02) !default;
+$ui-03: map-get($theme, ui-03) !default;
+$ui-04: map-get($theme, ui-04) !default;
+$ui-05: map-get($theme, ui-05) !default;
+$ui-background: map-get($theme, ui-background) !default;
+
+// Text
+$text-01: map-get($theme, text-01) !default;
+$text-02: map-get($theme, text-02) !default;
+$text-03: map-get($theme, text-03) !default;
+$text-04: map-get($theme, text-04) !default;
+
+// Layout .............................................................
+
+$layout--main-width: auto !default;
+$layout--sidebar-width: 15rem !default;

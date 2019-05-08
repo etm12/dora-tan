@@ -1,0 +1,3 @@
+@mixin debug ($w: 1px, $c: #f00, $s: dashed) {
+  border: $s $w $c;
+}

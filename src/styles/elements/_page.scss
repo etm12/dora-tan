@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  background-color: $ui-01;
+  color: $text-01;
+}
