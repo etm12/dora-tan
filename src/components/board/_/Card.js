@@ -4,6 +4,7 @@ import * as U from 'karet.util';
 import * as R from 'kefir.ramda';
 
 import { toCssTranslate, toPx } from './helpers';
+import Markdown from '../../Markdown';
 
 const Card = ({ current, data }) => {
   const {
@@ -37,7 +38,7 @@ const Card = ({ current, data }) => {
       </header>
 
       <div className="c--card__body">
-        {content}
+        <Markdown>{content}</Markdown>
       </div>
 
       <footer className="c--card__footer">
