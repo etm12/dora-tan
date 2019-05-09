@@ -58,9 +58,10 @@ const CardEditor = ({ card }) => {
         </label>
         <textarea
           className="c--input--textarea"
-          defaultValue={content}
-          onInput={e => content.set(e.target.value)}
+          value={content}
+          onChange={e => content.set(e.target.value)}
           disabled={isDisabled}
+          rows={5}
         />
       </div>
     </div>
