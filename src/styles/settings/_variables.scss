@@ -8,6 +8,8 @@ $_24px: remify(24px) !default;
 $_32px: remify(32px) !default;
 $_40px: remify(40px) !default;
 $_48px: remify(48px) !default;
+$_64px: remify(64px) !default;
+$_320px: remify(320px) !default;
 
 // Text and typography ................................................
 
@@ -26,9 +28,14 @@ $f--18px: remify(18px) !default;
 
 $app-root--font-size: $f--14px !default;
 
-// Whitespace
+// Form elements
+
+$f--button: $f--14px !default;
+
+// Whitespace .........................................................
 
 $base-spacing: .5rem !default;
+$base-component-spacing: 2rem !default;
 
 // Color ..............................................................
 

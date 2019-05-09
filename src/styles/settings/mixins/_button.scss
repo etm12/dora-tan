@@ -1,0 +1,7 @@
+@mixin make-button-base {
+  border: solid 1px #f00;
+  text-align: left;
+  min-height: $_48px;
+  max-width: $_320px;
+  padding: calc(0.875rem - 3px) remify(60px) calc(0.875rem - 3px) remify(12px);
+}
