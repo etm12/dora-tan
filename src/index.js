@@ -8,7 +8,7 @@ import './styles/index.scss';
 import { mkStore } from './core/store';
 import * as Default from './defaults';
 
-const store = mkStore(Default.initialState);
+const store = mkStore(Default.initialState, Default.storageKey);
 
 ReactDOM.render(
   <Main {...{ store }} />,
