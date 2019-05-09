@@ -1,5 +1,7 @@
 import { v4 as mkUuid } from 'uuid';
 
+export const storageKey = 'dora-tan:v1';
+
 export const initialState = {
   current: null,
   cards: [
