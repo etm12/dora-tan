@@ -6,16 +6,19 @@ import * as R from 'kefir.ramda';
 import CardEditor from './_/CardEditor';
 import GlobalControls from './_/GlobalControls';
 import Group from './_/Group';
+import Modal from './Modal';
 
-const Sidebar = ({ current, cards }) => {
+const Sidebar = ({ store }) => {
+  const { current, cards } = U.destructure(store);
   const currentCard = U.view(L.find(R.whereEq({ id: current })), cards);
 
   return (
     <aside className="c--sidebar">
       <Group>
-        <GlobalControls />
+        <GlobalControls store={store} />
       </Group>
-      <Group>
+
+      <Group header="Selected">
         <CardEditor card={currentCard} />
       </Group>
 
