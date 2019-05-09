@@ -1,0 +1,4 @@
+.c--button {
+  @include make-button-base;
+  @include make-font-input;
+}
