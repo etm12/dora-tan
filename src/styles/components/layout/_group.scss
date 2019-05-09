@@ -1,3 +1,10 @@
 .c--group {
-  margin-bottom: $base-spacing;
+  margin-bottom: $base-component-spacing;
+
+  &__header {
+    border-bottom: solid 2px $ui-03;
+    font-size: $f--16px;
+    padding-bottom: $base-spacing;
+    margin-bottom: $base-spacing;
+  }
 }
