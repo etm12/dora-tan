@@ -1,8 +1,13 @@
 import { v4 as mkUuid } from 'uuid';
 
-export const storageKey = 'dora-tan:v1';
+export const minSize = [225, 225];
+
+export const storageKey = 'dora-tan:v4';
 
 export const initialState = {
+  flags: {
+    ghost: false,
+  },
   current: null,
   cards: [
     {
