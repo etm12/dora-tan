@@ -11,7 +11,7 @@ export const initialState = {
     },
     {
       id: mkUuid(),
-      position: [100, 100],
+      position: [350, 100],
       size: [200, 300],
       content: 'This is content',
     },
