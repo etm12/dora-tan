@@ -20,6 +20,16 @@ $c--card--body-height: auto !default;
     border: solid 2px $focus;
     z-index: 9999;
   }
+
+  .app-main--is-ghost & {
+    border: dashed 1px $focus;
+    background: rgba(255, 255, 255, .4);
+    box-shadow: none;
+
+    > * {
+      opacity: 0;
+    }
+  }
 }
 
 .c--card__header,
