@@ -1,4 +1,5 @@
 import * as U from 'karet.util';
+import Stored from 'atom.storage';
 
 /**
  * While this looks like a simple wrapper, it's meant
@@ -8,4 +9,9 @@ import * as U from 'karet.util';
  * @template T
  * @param {T} initial
  */
-export const mkStore = (initial = {}) => U.atom(initial);
+export const mkStore = (initial = {}, key = process.env.REACT_APP_STORAGE_KEY) => Stored({
+  key,
+  value: initial,
+  Atom: U.atom,
+  storage: localStorage,
+});
