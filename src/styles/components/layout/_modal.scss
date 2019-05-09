@@ -1,0 +1,36 @@
+$c--modal--header-text-size: $f--18px;
+
+$c--modal--normal-width: 40vw;
+$c--modal--normal-height: 60vh;
+$c--modal--large-width: 50vw;
+
+.c--modal {
+  color: $ui-05;
+  border: none;
+  padding: $base-spacing;
+  width: $c--modal--normal-width;
+  max-height: $c--modal--normal-height;
+  top: 3rem;
+  display: grid;
+  grid-template-rows: 1fr auto 2rem;
+
+  &.c--modal--large,
+  &.is-large {
+    width: $c--modal--large-width;
+  }
+
+  &::backdrop {
+    color: #f00;
+  }
+
+  &__header {
+    font-size: $c--modal--header-text-size;
+    padding-bottom: $base-spacing;
+    margin-bottom: $base-spacing;
+    border-bottom: solid 2px $ui-03;
+  }
+
+  &__body {
+    @include debug;
+  }
+}
