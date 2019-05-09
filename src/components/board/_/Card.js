@@ -33,7 +33,7 @@ const Card = ({ current, data }) => {
         .map(([a, transform]) => Object.assign({}, a, { transform }))}
     >
       <header className="c--card__header">
-        {id}
+        <span>{id}</span>
       </header>
 
       <div className="c--card__body">
@@ -41,7 +41,7 @@ const Card = ({ current, data }) => {
       </div>
 
       <footer className="c--card__footer">
-        {U.stringify(size)}
+        {size.map(wh => wh.join(' × '))}
       </footer>
     </article>
   );
