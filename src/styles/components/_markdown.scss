@@ -1,4 +1,20 @@
 .c--markdown {
+  ul,
+  ol {
+    padding: 1.5rem;
+
+    li {
+      margin: 0;
+      margin-bottom: $base-spacing;
+    }
+  }
+
+  code,
+  pre {
+    font-family: $font-family-monospace;
+    font-size: inherit;
+  }
+
   > * {
     &:first-child {
       margin-top: 0;
