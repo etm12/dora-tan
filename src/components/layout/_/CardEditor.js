@@ -1,5 +1,6 @@
 import * as React from 'karet';
 import * as U from 'karet.util';
+import * as R from 'kefir.ramda';
 import BaseInput from '../../forms/BaseInput';
 
 const CardEditor = ({ card }) => {
@@ -10,7 +11,7 @@ const CardEditor = ({ card }) => {
   const left = U.view(0, position);
   const top = U.view(1, position);
 
-  const isDisabled = U.mapValue(x => !x, card);
+  const isDisabled = U.mapValue(R.not, card);
 
   return (
     <div className="c--form c--form--2col">
@@ -18,7 +19,7 @@ const CardEditor = ({ card }) => {
         <label className="c--label">
           ID
         </label>
-        <div>
+        <div className="c--label-value">
           {id}
         </div>
       </div>
