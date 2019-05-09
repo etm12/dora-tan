@@ -4,15 +4,24 @@ import * as L from 'kefir.partial.lenses';
 import * as R from 'kefir.ramda';
 
 import CardEditor from './_/CardEditor';
+import GlobalControls from './_/GlobalControls';
+import Group from './_/Group';
 
 const Sidebar = ({ current, cards }) => {
   const currentCard = U.view(L.find(R.whereEq({ id: current })), cards);
 
   return (
     <aside className="c--sidebar">
-      <CardEditor card={currentCard} />
+      <Group>
+        <GlobalControls />
+      </Group>
+      <Group>
+        <CardEditor card={currentCard} />
+      </Group>
 
-      <pre><code>{U.stringify(currentCard, null, 2)}</code></pre>
+      <Group>
+        <pre><code>{U.stringify(currentCard, null, 2)}</code></pre>
+      </Group>
     </aside>
   );
 };
