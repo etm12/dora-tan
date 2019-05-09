@@ -1,13 +1,14 @@
-$c--card--background: $ui-02 !default !global;
-$c--card--header-height: $_32px;
-$c--card--footer-height: $_32px;
-$c--card--body-height: auto;
+$c--card--background: $ui-02 !default;
+$c--card--header-height: $_32px !default;
+$c--card--footer-height: $_32px !default;
+$c--card--text-size--footer: $f--12px !default;
+$c--card--body-height: auto !default;
 
 .c--card {
-  @include debug;
-
   position: absolute;
+  border: solid 2px #fff;
   background: $c--card--background;
+  box-shadow: 0 0 0 2px $ui-03;
 
   display: grid;
   grid-template-rows:
@@ -16,19 +17,33 @@ $c--card--body-height: auto;
     $c--card--footer-height;
 
   &.c--card--selected {
-    border-width: 2px;
+    border: solid 2px $focus;
     z-index: 9999;
   }
 }
 
+.c--card__header,
+.c--card__footer,
+.c--card__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .c--card__header {
-  @include debug($c: #f00);
+  overflow: hidden;
+
+  span {
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
 }
 
 .c--card__footer {
-  @include debug($c: #00f);
+  color: $ui-03;
+  font-size: $c--card--text-size--footer;
 }
 
 .c--card__body {
-  @include debug($c: #f07);
 }

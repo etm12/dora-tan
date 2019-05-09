@@ -46,6 +46,9 @@ $text-02: map-get($theme, text-02) !default;
 $text-03: map-get($theme, text-03) !default;
 $text-04: map-get($theme, text-04) !default;
 
+// Elements
+$focus: map-get($theme, focus) !default;
+
 // Layout .............................................................
 
 $layout--main-width: auto !default;
