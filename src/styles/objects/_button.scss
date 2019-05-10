@@ -1,4 +1,17 @@
 .c--button {
   @include make-button-base;
   @include make-font-input;
+
+  &.is-primary {
+    background-color: $primary-background;
+    color: $text-04;
+
+    &:hover {
+      background-color: $primary-hover-background;
+    }
+
+    &:active {
+      background-color: $primary-active-background;
+    }
+  }
 }
