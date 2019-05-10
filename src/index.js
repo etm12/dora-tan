@@ -1,3 +1,6 @@
+/**
+ * @module App
+ */
 import * as React from 'karet';
 import ReactDOM from 'react-dom';
 
@@ -7,8 +10,14 @@ import './styles/index.scss';
 
 import { mkStore } from './core/store';
 import * as Default from './defaults';
+import extendDev from './core/development';
 
 const store = mkStore(Default.initialState, Default.storageKey);
+
+if (process.env.NODE_ENV !== 'production') {
+  store.log('store');
+  extendDev(store);
+}
 
 ReactDOM.render(
   <Main {...{ store }} />,
