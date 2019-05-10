@@ -1,5 +1,7 @@
 @mixin make-button-base {
-  border: solid 1px #f00;
+  // border: solid 1px $ui-04;
+  border: none;
+  background: $ui-background;
   text-align: left;
   min-height: $_48px;
   max-width: $_320px;

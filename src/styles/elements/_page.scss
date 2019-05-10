@@ -13,3 +13,7 @@ body {
   background-color: $ui-01;
   color: $text-01;
 }
+
+::backdrop {
+  background-color: $backdrop-background;
+}
