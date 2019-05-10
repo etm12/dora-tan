@@ -31,6 +31,10 @@ $c--modal--large-width: 50vw;
   }
 
   &__body {
-    @include debug;
+    margin-bottom: $base-spacing;
   }
+}
+
+.app-main--is-modal {
+  filter: blur(.15rem);
 }
