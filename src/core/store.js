@@ -1,14 +1,15 @@
+// eslint-ignore-next-line
+import * as K from 'kefir';
 import * as U from 'karet.util';
 import Stored from 'atom.storage';
 
 
 /**
- * While this looks like a simple wrapper, it's meant
- * for futureproofing changes to the store, w.r.t.
- * adding localStorage or Undo support.
+ * Wrapper for creating an observable and mutable store
  *
  * @template T
  * @param {T} initial
+ * @return {K.Observable<T, never>}
  */
 export const mkStore = (initial = {}, key) => Stored({
   key,
@@ -16,3 +17,7 @@ export const mkStore = (initial = {}, key) => Stored({
   Atom: U.atom,
   storage: localStorage,
 });
+
+/**
+ * @typedef {K.Observable<State, any>} Store
+ */
