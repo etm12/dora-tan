@@ -8,11 +8,13 @@ import Sidebar from './components/layout/Sidebar';
 const Main = ({ store }) => {
   const { cards, current } = U.destructure(store);
   const ghostMode = M.ghostModeIn(store);
+  const hasVisibleModals = M.hasVisibleFlagsIn(store);
 
   return (
     <main className={U.cns(
       'app-main',
       U.when(ghostMode, 'app-main--is-ghost'),
+      U.when(hasVisibleModals, 'app-main--is-modal'),
     )}>
       <Board {...{ current, cards }} />
       <Sidebar {...{ store }} />
