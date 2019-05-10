@@ -1,16 +1,17 @@
 import * as React from 'karet';
 import * as U from 'karet.util';
 
-import Icon from '../Icon';
+import * as M from '../../meta';
 
-const Modal = ({ header, children, scroll, open }) => {
+const Modal = ({ id, flags, header, children, scroll }) => {
   const modalRef = U.variable();
+  const open = U.view(M.hasL(id), flags);
+
+  open.log('open');
 
   const toggleModalVisibility = U.thru(
     U.template([open, modalRef]),
-    U.consume(([flag, ref]) => {
-      flag ? ref.showModal() : ref.close();
-    }),
+    U.consume(([flag, ref]) => flag ? ref.showModal() : ref.close()),
   );
 
   return (
@@ -19,9 +20,8 @@ const Modal = ({ header, children, scroll, open }) => {
 
       <dialog
         ref={U.refTo(modalRef)}
-        className={U.cns(
-          'c--modal',
-        )}
+        className="c--modal"
+        style={{ display: U.ifElse(open, 'block', 'none') }}
       >
         <header className="c--modal__header">
           {header}
@@ -35,10 +35,8 @@ const Modal = ({ header, children, scroll, open }) => {
         </div>
 
         <footer className="c--modal__footer">
-          <button
-            className="c--button"
-            onClick={U.doSet(open, false)}
-          >
+          <button className="c--button is-primary"
+                  onClick={U.doSet(open, false)}>
             Close
           </button>
         </footer>
