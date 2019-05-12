@@ -6,7 +6,7 @@ const cb = {
   number: e => +e.target.value,
 };
 
-const BaseInput = ({ value, placeholder, disabled, onInput, type = 'text' }) =>
+const BaseInput = ({ value, defaultValue, placeholder, disabled, onInput, type = 'text' }) =>
   <input
     className={U.cns(
       'c--input',
@@ -14,7 +14,8 @@ const BaseInput = ({ value, placeholder, disabled, onInput, type = 'text' }) =>
     )}
     disabled={disabled}
     placeholder={placeholder}
-    defaultValue={value}
+    defaultValue={defaultValue}
+    value={value}
     type={type}
     onInput={U.through(cb[type], U.set(value))}
   />;
