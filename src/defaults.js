@@ -4,6 +4,15 @@ export const minSize = [225, 225];
 
 export const storageKey = 'dora-tan:v1-2';
 
+//
+
+/**
+ * @type {Array<HexColor}
+ */
+export const colors = [
+  '',
+];
+
 /**
  * @type {State}
  */
@@ -60,4 +69,8 @@ export const initialState = {
 
 /**
  * @typedef {string} Uuid
+ */
+
+/**
+ * @typedef {string} HexColor
  */

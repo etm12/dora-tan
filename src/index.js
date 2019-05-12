@@ -1,6 +1,3 @@
-/**
- * @module App
- */
 import * as React from 'karet';
 import ReactDOM from 'react-dom';
 
@@ -20,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 ReactDOM.render(
-  <Main {...{ store }} />,
+  <Main store={store} />,
   document.getElementById('root'),
 );
 

@@ -5,10 +5,16 @@ import * as M from './meta';
 import Board from './components/board/Board';
 import Sidebar from './components/layout/Sidebar';
 
+/**
+ * @param {Props<import('./core/store').Store>} param0
+ */
 const Main = ({ store }) => {
   const { cards, current } = U.destructure(store);
   const ghostMode = M.ghostModeIn(store);
   const hasVisibleModals = M.hasVisibleFlagsIn(store);
+
+  /** @type {ILol} */
+  const x = 0;
 
   return (
     <main className={U.cns(
@@ -23,3 +29,9 @@ const Main = ({ store }) => {
 };
 
 export default Main;
+
+/**
+ * @template T
+ * @typedef {object} Props
+ * @prop {T} store
+ */
