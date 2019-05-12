@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "atom.storage": "^0.5.5",
+    "daggy": "^1.4.0",
+    "deep-object-diff": "^1.1.0",
+    "infestines": "^0.4.11",
     "karet": "^4.1.0",
     "karet.util": "^0.19.1",
     "kefir": "^3.8.6",
