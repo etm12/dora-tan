@@ -1,7 +1,7 @@
 .c--markdown {
   ul,
   ol {
-    padding: 1.5rem;
+    padding: 0 1.5rem;
 
     li {
       margin: 0;
@@ -23,5 +23,7 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    margin-bottom: $base-spacing;
   }
 }

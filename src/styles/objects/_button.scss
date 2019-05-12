@@ -4,7 +4,7 @@
 
   &.is-primary {
     background-color: $primary-background;
-    color: $text-04;
+    color: $primary-text;
 
     &:hover {
       background-color: $primary-hover-background;
@@ -13,5 +13,16 @@
     &:active {
       background-color: $primary-active-background;
     }
+
+    &:disabled {
+      background-color: $primary-disabled-background;
+      color: $primary-disabled-text;
+      cursor: not-allowed;
+    }
+  }
+
+  &.is-danger {
+    background-color: $danger-background;
+    color: $danger-text;
   }
 }

@@ -1,0 +1,20 @@
+.c--draggable-element {
+  @include debug;
+
+  &.draggable__body {
+    position: absolute;
+    z-index: $z-index-top;
+    border: dashed 2px #fff;
+    text-indent: -9999px;
+  }
+
+  &.draggable__backdrop {
+    background: rgba(255, 0, 0, .5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: $z-index-top-underlay;
+  }
+}

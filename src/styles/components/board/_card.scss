@@ -18,7 +18,7 @@ $c--card--body-height: auto !default;
 
   &.c--card--selected {
     border: solid 2px $focus;
-    z-index: 9999;
+    z-index: $z-index-front;
   }
 
   .app-main--is-ghost & {
@@ -34,7 +34,8 @@ $c--card--body-height: auto !default;
 
 .c--card__header,
 .c--card__footer,
-.c--card__body {
+.c--card__body,
+.c--card__aside {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,4 +57,28 @@ $c--card--body-height: auto !default;
 }
 
 .c--card__body {
+}
+
+//
+
+.c--card__aside {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  background-color: $c--card--background;
+  transform: translateY(100%);
+  width: 100%;
+
+  .c--card--selected & {
+    display: grid;
+    @include debug;
+    grid-template-columns: repeat(3, 1fr);
+    padding: $base-spacing;
+
+    button {
+      height: 100%;
+    }
+  }
 }

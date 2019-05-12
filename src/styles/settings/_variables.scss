@@ -30,7 +30,7 @@ $app-root--font-size: $f--14px !default;
 
 // Form elements ____________
 
-$f--button: $f--14px !default;
+$f--button: $f--12px !default;
 
 // Whitespace .........................................................
 
@@ -58,10 +58,21 @@ $interactive-02: map-get($theme, interactive-02) !default;
 $interactive-03: map-get($theme, interactive-03) !default;
 $interactive-04: map-get($theme, interactive-04) !default;
 
+$support-01: map-get($theme, support-01) !default;
+$support-02: map-get($theme, support-02) !default;
+$support-03: map-get($theme, support-03) !default;
+$support-04: map-get($theme, support-04) !default;
+
 $hover-primary: map-get($theme, hover-primary) !default;
 $active-primary: map-get($theme, active-primary) !default;
 
+$hover-danger: map-get($theme, hover-danger) !default;
+
 $focus: map-get($theme, focus) !default;
+
+$disabled-01: map-get($theme, disabled-01) !default;
+$disabled-02: map-get($theme, disabled-02) !default;
+$disabled-03: map-get($theme, disabled-03) !default;
 
 // Text _____________________
 
@@ -82,8 +93,21 @@ $primary-background: $interactive-01 !default;
 $primary-text: $text-04 !default;
 $primary-active-background: $active-primary !default;
 $primary-hover-background: $hover-primary !default;
+$primary-disabled-background: $disabled-01 !default;
+$primary-disabled-text:  $ui-03 !default;
+
+$danger-background: $support-01 !default;
+$danger-text: $text-04 !default;
 
 // Layout .............................................................
 
 $layout--main-width: auto !default;
 $layout--sidebar-width: 15rem !default;
+
+// Order
+
+$z-index-base: 0 !default;
+$z-index-front: ($z-index-base + 10) !default;
+$z-index-top-underlay: ($z-index-base + 13) !default;
+$z-index-top: ($z-index-base + 15) !default;
+$z-index-back: ($z-index-base - 10) !default;

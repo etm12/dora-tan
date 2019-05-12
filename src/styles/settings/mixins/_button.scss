@@ -2,8 +2,9 @@
   // border: solid 1px $ui-04;
   border: none;
   background: $ui-background;
-  text-align: left;
-  min-height: $_48px;
-  max-width: $_320px;
-  padding: calc(0.875rem - 3px) remify(60px) calc(0.875rem - 3px) remify(12px);
+  // text-align: left;
+  // min-height: $_48px;
+  // max-width: $_320px;
+  padding: ($base-spacing * 0.5) $base-spacing;
+  // padding: calc(0.875rem - 3px) remify(60px) calc(0.875rem - 3px) remify(12px);
 }
