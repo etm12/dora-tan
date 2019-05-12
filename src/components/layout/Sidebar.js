@@ -6,7 +6,6 @@ import * as R from 'kefir.ramda';
 import CardEditor from './_/CardEditor';
 import GlobalControls from './_/GlobalControls';
 import Group from './_/Group';
-import Modal from './Modal';
 
 const Sidebar = ({ store }) => {
   const { current, cards } = U.destructure(store);
@@ -15,11 +14,14 @@ const Sidebar = ({ store }) => {
   return (
     <aside className="c--sidebar">
       <Group>
-        <GlobalControls store={store} />
+        <GlobalControls {...{ store }} />
       </Group>
 
       <Group header="Selected">
-        <CardEditor card={currentCard} />
+        {U.when(
+          current,
+          <CardEditor {...{ current, cards }} />,
+        )}
       </Group>
 
       <Group>

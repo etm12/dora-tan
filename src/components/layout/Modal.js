@@ -7,8 +7,6 @@ const Modal = ({ id, flags, header, children, scroll }) => {
   const modalRef = U.variable();
   const open = U.view(M.hasL(id), flags);
 
-  open.log('open');
-
   const toggleModalVisibility = U.thru(
     U.template([open, modalRef]),
     U.consume(([flag, ref]) => flag ? ref.showModal() : ref.close()),
@@ -35,8 +33,10 @@ const Modal = ({ id, flags, header, children, scroll }) => {
         </div>
 
         <footer className="c--modal__footer">
-          <button className="c--button is-primary"
-                  onClick={U.doSet(open, false)}>
+          <button
+            className="c--button is-primary"
+            onClick={U.doSet(open, false)}
+          >
             Close
           </button>
         </footer>

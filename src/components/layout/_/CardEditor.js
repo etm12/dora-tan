@@ -1,9 +1,12 @@
 import * as React from 'karet';
 import * as U from 'karet.util';
 import * as R from 'kefir.ramda';
+import * as L from 'kefir.partial.lenses';
 import BaseInput from '../../forms/BaseInput';
 
-const CardEditor = ({ card }) => {
+const CardEditor = ({ current, cards }) => {
+  const card = U.view(L.find(R.whereEq({ id: current })), cards);
+  card.log('selected');
   const { id, size, position, content } = U.destructure(card);
 
   const width = U.view(0, size);
@@ -28,14 +31,14 @@ const CardEditor = ({ card }) => {
         <label className="c--label">
           Width
         </label>
-        <BaseInput disabled={isDisabled} type="number" value={width} />
+        <BaseInput disabled={isDisabled} type="number" value={U.view(0, size)} />
       </div>
 
       <div className="c--form-group">
         <label className="c--label">
           Height
         </label>
-        <BaseInput disabled={isDisabled} type="number" value={height} />
+        <BaseInput disabled={isDisabled} type="number" value={U.view(1, size)} />
       </div>
 
       <div className="c--form-group">
