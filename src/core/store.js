@@ -1,4 +1,4 @@
-// eslint-ignore-next-line
+// eslint-disable-next-line
 import * as K from 'kefir';
 import * as U from 'karet.util';
 import Stored from 'atom.storage';
