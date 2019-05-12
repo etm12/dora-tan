@@ -12,11 +12,7 @@ const Board = ({ current, cards }) => {
       {U.thru(
         cards,
         U.mapElems((card, ix) =>
-          <Card
-            key={ix}
-            data={card}
-            current={current}
-          />)
+          <Card {...{ key: ix, data: card, current }} />)
       )}
     </section>
   );

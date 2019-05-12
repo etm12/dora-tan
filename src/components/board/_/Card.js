@@ -20,8 +20,11 @@ const Card = ({ current, data }) => {
     size.map(R.zipObj(['width', 'height']));
 
   const elementTransform =
-    position.map(xy => xy.map(toPx))
-            .map(([x, y]) => [toCssTranslate('x')(x), toCssTranslate('y')(y)].join(' '));
+    position.map(([x, y]) => toCssTranslate({ x, y }));
+
+  const cardStyle =
+    U.template([elementSize, elementTransform])
+     .map(([a, transform]) => Object.assign({}, a, { transform }));
 
   return (
     <article
@@ -30,8 +33,7 @@ const Card = ({ current, data }) => {
         U.when(isSelected, 'c--card--selected'),
       )}
       onClick={U.doSet(current, id)}
-      style={U.template([elementSize, elementTransform])
-        .map(([a, transform]) => Object.assign({}, a, { transform }))}
+      style={cardStyle}
     >
       <header className="c--card__header">
         <span>{id}</span>
@@ -40,6 +42,27 @@ const Card = ({ current, data }) => {
       <div className="c--card__body">
         <Markdown>{content}</Markdown>
       </div>
+
+      <aside className="c--card__aside">
+        <button
+          className="c--button is-danger"
+          onClick={U.doRemove(data)}
+        >
+          Remove
+        </button>
+        <button
+          disabled
+          className="c--button is-primary"
+        >
+          Lock
+        </button>
+        <button
+          disabled
+          className="c--button is-primary"
+        >
+          Outline
+        </button>
+      </aside>
 
       <footer className="c--card__footer">
         {size.map(wh => wh.join(' × '))}
